@@ -1893,8 +1893,11 @@ function updateInstitutionStackChart() {
                         },
                         anchor: 'center',
                         align: 'center',
-                        color: '#fff',
-                        font: { size: 12, weight: 'bold' },
+                        color: '#333',
+                        font: { size: 11, weight: 'bold' },
+                        backgroundColor: 'rgba(200,200,200,0.85)',
+                        borderRadius: 3,
+                        padding: { top: 2, bottom: 2, left: 4, right: 4 },
                         formatter: function(value) {
                             return value > 0 ? value.toFixed(2) + '万' : '';
                         }
@@ -1912,8 +1915,11 @@ function updateInstitutionStackChart() {
                         },
                         anchor: 'center',
                         align: 'center',
-                        color: '#fff',
-                        font: { size: 12, weight: 'bold' },
+                        color: '#333',
+                        font: { size: 11, weight: 'bold' },
+                        backgroundColor: 'rgba(200,200,200,0.85)',
+                        borderRadius: 3,
+                        padding: { top: 2, bottom: 2, left: 4, right: 4 },
                         formatter: function(value) {
                             return value > 0 ? value.toFixed(2) + '万' : '';
                         }
@@ -1931,8 +1937,11 @@ function updateInstitutionStackChart() {
                         },
                         anchor: 'center',
                         align: 'center',
-                        color: '#fff',
-                        font: { size: 12, weight: 'bold' },
+                        color: '#333',
+                        font: { size: 11, weight: 'bold' },
+                        backgroundColor: 'rgba(200,200,200,0.85)',
+                        borderRadius: 3,
+                        padding: { top: 2, bottom: 2, left: 4, right: 4 },
                         formatter: function(value) {
                             return value > 0 ? value.toFixed(2) + '万' : '';
                         }
@@ -1948,9 +1957,12 @@ function updateInstitutionStackChart() {
                         display: true,
                         anchor: 'end',
                         align: 'top',
-                        offset: 5,
+                        offset: 3,
                         color: '#333',
-                        font: { size: 13, weight: 'bold' },
+                        font: { size: 12, weight: 'bold' },
+                        backgroundColor: 'rgba(220,220,220,0.9)',
+                        borderRadius: 4,
+                        padding: { top: 3, bottom: 3, left: 6, right: 6 },
                         formatter: function(value) {
                             return 'Σ' + value.toFixed(2) + '万';
                         }
