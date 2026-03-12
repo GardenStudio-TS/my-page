@@ -1775,6 +1775,13 @@ function getInstitutionData(mode) {
     const vehicleCategories = ['(03) 机动车辆险', '(13) 涉车产品'];
     const agricultureCategories = ['(11) 农业险'];
     
+    // 需要隐藏的机构列表
+    const hiddenInstitutions = [
+        '(01100004) 农业险一部',
+        '(01100014) 电子商务部',
+        '(01100019) 泰安续保业务部'
+    ];
+    
     function getCategoryGroup(category) {
         if (vehicleCategories.includes(category)) return '车险';
         if (agricultureCategories.includes(category)) return '农险';
@@ -1839,9 +1846,16 @@ function updateInstitutionStackChart() {
     
     const { data: institutionData, year, latestDate, prevDate, mode: currentMode } = result;
     
-    // 过滤掉保费为0的机构，并按总保费降序排序
+    // 需要隐藏的机构列表
+    const hiddenInstitutions = [
+        '(01100004) 农业险一部',
+        '(01100014) 电子商务部',
+        '(01100019) 泰安续保业务部'
+    ];
+    
+    // 过滤掉保费为0的机构和需要隐藏的机构，并按总保费降序排序
     const activeInstitutions = allInstitutions
-        .filter(inst => institutionData[inst].total > 0)
+        .filter(inst => institutionData[inst].total > 0 && !hiddenInstitutions.includes(inst))
         .sort((a, b) => institutionData[b].total - institutionData[a].total);
     
     // 提取机构名称（去掉代码前缀）
