@@ -515,6 +515,16 @@
 
             <!-- 各机构险种分布堆积柱状图 -->
             <h2 style="margin-top: 40px; margin-bottom: 15px; color: #333; padding-left: 5px;">📊 各机构险种分布（最新日期）</h2>
+            <div style="display: flex; justify-content: center; margin-bottom: 15px; gap: 20px;">
+                <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 14px; color: #666;">
+                    <input type="radio" name="stackChartMode" value="cumulative" checked onchange="updateInstitutionStackChart()" style="width: 16px; height: 16px; cursor: pointer;">
+                    累计保费
+                </label>
+                <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 14px; color: #666;">
+                    <input type="radio" name="stackChartMode" value="daily" onchange="updateInstitutionStackChart()" style="width: 16px; height: 16px; cursor: pointer;">
+                    当日新增
+                </label>
+            </div>
             <div class="chart-container" style="margin-bottom: 30px;">
                 <canvas id="institutionStackChart"></canvas>
             </div>
@@ -1746,69 +1756,93 @@ function updateChart() {
 // ============================================
 let institutionStackChart = null;
 
-function createInstitutionStackChart() {
-    const ctx = document.getElementById('institutionStackChart');
-    if (!ctx) return;
-    
+// 获取机构数据（支持累计或当日新增模式）
+function getInstitutionData(mode) {
     // 获取2026年最新日期（没有则用2025年）
     const dates2026 = Object.keys(detailData[2026]).sort();
     const dates2025 = Object.keys(detailData[2025]).sort();
     const latestDate = dates2026.length > 0 ? dates2026[dates2026.length - 1] : 
                       (dates2025.length > 0 ? dates2025[dates2025.length - 1] : null);
     
-    if (!latestDate) {
-        console.log('没有数据可显示');
-        return;
-    }
+    if (!latestDate) return null;
     
     const year = dates2026.length > 0 && dates2026.includes(latestDate) ? 2026 : 2025;
-    const dateData = detailData[year][latestDate];
-    
-    if (!dateData || !dateData.records) {
-        console.log('日期数据为空');
-        return;
-    }
+    const yearDates = year === 2026 ? dates2026 : dates2025;
+    const currentIndex = yearDates.indexOf(latestDate);
+    const prevDate = currentIndex > 0 ? yearDates[currentIndex - 1] : null;
     
     // 险种分组定义
     const vehicleCategories = ['(03) 机动车辆险', '(13) 涉车产品'];
     const agricultureCategories = ['(11) 农业险'];
     
-    // 判断险种类别
     function getCategoryGroup(category) {
         if (vehicleCategories.includes(category)) return '车险';
         if (agricultureCategories.includes(category)) return '农险';
         return '非车险';
     }
     
-    // 按机构汇总数据
-    const institutionData = {};
-    
-    // 初始化所有机构
-    allInstitutions.forEach(inst => {
-        institutionData[inst] = {
-            '车险': 0,
-            '农险': 0,
-            '非车险': 0,
-            total: 0
-        };
-    });
-    
-    // 统计各机构各险种保费
-    dateData.records.forEach(record => {
-        const group = getCategoryGroup(record.category);
-        const premium = parseFloat(record.premium) || 0;
+    // 计算机构数据
+    function calcInstitutionData(date, isDelta) {
+        const dateData = detailData[year][date];
+        if (!dateData || !dateData.records) return {};
         
-        if (institutionData[record.institution]) {
-            institutionData[record.institution][group] += premium;
-            institutionData[record.institution].total += premium;
-        }
-    });
+        const data = {};
+        allInstitutions.forEach(inst => {
+            data[inst] = { '车险': 0, '农险': 0, '非车险': 0, total: 0 };
+        });
+        
+        dateData.records.forEach(record => {
+            const group = getCategoryGroup(record.category);
+            const premium = parseFloat(record.premium) || 0;
+            if (data[record.institution]) {
+                data[record.institution][group] += premium;
+                data[record.institution].total += premium;
+            }
+        });
+        return data;
+    }
     
-    // 过滤掉保费为0的机构
-    const activeInstitutions = allInstitutions.filter(inst => institutionData[inst].total > 0);
+    const currentData = calcInstitutionData(latestDate, false);
     
-    // 按总保费降序排序
-    activeInstitutions.sort((a, b) => institutionData[b].total - institutionData[a].total);
+    if (mode === 'daily' && prevDate) {
+        // 当日新增模式：计算差值
+        const prevData = calcInstitutionData(prevDate, false);
+        const deltaData = {};
+        allInstitutions.forEach(inst => {
+            deltaData[inst] = {
+                '车险': Math.max(0, (currentData[inst]?.['车险'] || 0) - (prevData[inst]?.['车险'] || 0)),
+                '农险': Math.max(0, (currentData[inst]?.['农险'] || 0) - (prevData[inst]?.['农险'] || 0)),
+                '非车险': Math.max(0, (currentData[inst]?.['非车险'] || 0) - (prevData[inst]?.['非车险'] || 0)),
+                total: Math.max(0, (currentData[inst]?.total || 0) - (prevData[inst]?.total || 0))
+            };
+        });
+        return { data: deltaData, year, latestDate, prevDate, mode };
+    } else {
+        // 累计保费模式
+        return { data: currentData, year, latestDate, prevDate: null, mode };
+    }
+}
+
+// 更新堆积柱状图
+function updateInstitutionStackChart() {
+    const ctx = document.getElementById('institutionStackChart');
+    if (!ctx) return;
+    
+    // 获取当前模式
+    const mode = document.querySelector('input[name="stackChartMode"]:checked')?.value || 'cumulative';
+    const result = getInstitutionData(mode);
+    
+    if (!result) {
+        console.log('没有数据可显示');
+        return;
+    }
+    
+    const { data: institutionData, year, latestDate, prevDate, mode: currentMode } = result;
+    
+    // 过滤掉保费为0的机构，并按总保费降序排序
+    const activeInstitutions = allInstitutions
+        .filter(inst => institutionData[inst].total > 0)
+        .sort((a, b) => institutionData[b].total - institutionData[a].total);
     
     // 提取机构名称（去掉代码前缀）
     const labels = activeInstitutions.map(inst => {
@@ -1926,7 +1960,9 @@ function createInstitutionStackChart() {
             plugins: {
                 title: {
                     display: true,
-                    text: `数据时间：${year}年${latestDate.substring(5)}`,
+                    text: currentMode === 'daily' && prevDate 
+                        ? `当日新增 (${year}年${latestDate.substring(5)} 相比 ${prevDate.substring(5)})`
+                        : `累计保费 (${year}年${latestDate.substring(5)})`,
                     font: { size: 14, weight: 'bold' },
                     padding: { top: 10, bottom: 20 }
                 },
@@ -1951,10 +1987,11 @@ function createInstitutionStackChart() {
                             return context[0].label;
                         },
                         label: function(context) {
+                            const labelPrefix = currentMode === 'daily' ? '新增' : '';
                             if (context.dataset.label === '总保费') {
-                                return '总保费: ' + context.parsed.y.toFixed(2) + '万元';
+                                return (labelPrefix ? '新增' : '总') + '保费: ' + context.parsed.y.toFixed(2) + '万元';
                             }
-                            return context.dataset.label + ': ' + context.parsed.y.toFixed(2) + '万元';
+                            return labelPrefix + context.dataset.label + ': ' + context.parsed.y.toFixed(2) + '万元';
                         }
                     }
                 },
@@ -1985,6 +2022,11 @@ function createInstitutionStackChart() {
             }
         }
     });
+}
+
+// 入口函数：初始化堆积柱状图
+function createInstitutionStackChart() {
+    updateInstitutionStackChart();
 }
 
 // ============================================
