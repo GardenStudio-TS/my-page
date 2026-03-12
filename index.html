@@ -456,7 +456,7 @@
             </div>
 
             <div style="display: flex; justify-content: flex-end; align-items: center; margin-bottom: 10px; padding-right: 5px;">
-                <span style="color: #666; font-size: 13px;">👁️ 访问量：<span id="visitCount" style="background: #79C83D; color: white; padding: 2px 8px; border-radius: 10px; font-weight: bold; margin-left: 5px;">加载中...</span></span>
+                <span style="color: #666; font-size: 13px;">👁️ 访问量：<img src="https://visitor-badge.laobi.icu/badge?page_id=gardenstudio-ts-github-my-page" alt="访问次数" style="vertical-align: middle; margin-left: 5px;"></span>
             </div>
 
             <div class="filters">
@@ -2437,34 +2437,6 @@ document.getElementById('institutionSelect').addEventListener('change', function
     updateInstitutionTable();
     updateStatsCards();
 });
-
-// ============================================
-// 访问计数功能
-// ============================================
-(async function updateVisitCount() {
-    try {
-        // 使用 CountAPI 获取/增加访问计数
-        const namespace = 'gardenstudio-ts';
-        const key = 'my-page';
-        const response = await fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`);
-        if (response.ok) {
-            const data = await response.json();
-            const countElement = document.getElementById('visitCount');
-            if (countElement && data.value) {
-                countElement.textContent = data.value.toLocaleString() + ' 次';
-            }
-        } else {
-            throw new Error('CountAPI failed');
-        }
-    } catch (e) {
-        console.log('访问计数加载失败:', e);
-        const countElement = document.getElementById('visitCount');
-        if (countElement) {
-            countElement.textContent = 'N/A';
-            countElement.style.background = '#999';
-        }
-    }
-})();
 </script>
 </body>
 </html>
