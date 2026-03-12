@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-03-11T14:15:18.784775",
+    "generated_at": "2026-03-12T09:28:44.634994",
     "categories": [
       "(01) 企业财产险",
       "(03) 机动车辆险",
@@ -34,7 +34,8 @@
       "2025-03-05",
       "2025-03-08",
       "2025-03-09",
-      "2025-03-10"
+      "2025-03-10",
+      "2025-03-11"
     ],
     "dates_2026": [
       "2026-01-31",
@@ -46,7 +47,8 @@
       "2026-03-05",
       "2026-03-08",
       "2026-03-09",
-      "2026-03-10"
+      "2026-03-10",
+      "2026-03-11"
     ]
   },
   "time_series": {
@@ -100,6 +102,11 @@
         "date": "2025-03-10",
         "total_premium": 26142785.19000001,
         "filename": "2025数据(9).xlsx"
+      },
+      {
+        "date": "2025-03-11",
+        "total_premium": 26244273.040000003,
+        "filename": "2025数据(10).xlsx"
       }
     ],
     "2026": [
@@ -152,6 +159,11 @@
         "date": "2026-03-10",
         "total_premium": 23850252.890000004,
         "filename": "2026数据(9).xlsx"
+      },
+      {
+        "date": "2026-03-11",
+        "total_premium": 23954148.400000006,
+        "filename": "2026数据(10).xlsx"
       }
     ]
   },
@@ -2526,6 +2538,243 @@
           }
         ],
         "total_premium": 26142785.19000001
+      },
+      "2025-03-11": {
+        "date": "2025-03-11",
+        "filename": "2025数据(10).xlsx",
+        "records": [
+          {
+            "category": "(01) 企业财产险",
+            "institution": "(01100001) 直销业务部",
+            "premium": 706830.37
+          },
+          {
+            "category": "(01) 企业财产险",
+            "institution": "(01100003) 直销业务一部",
+            "premium": 0.0
+          },
+          {
+            "category": "(01) 企业财产险",
+            "institution": "(01100011) 泰安市新泰支公司",
+            "premium": 0.0
+          },
+          {
+            "category": "(01) 企业财产险",
+            "institution": "(01100013) 岱岳支公司",
+            "premium": 0.0
+          },
+          {
+            "category": "(01) 企业财产险",
+            "institution": "(01100016) 东平支公司",
+            "premium": 0.0
+          },
+          {
+            "category": "(03) 机动车辆险",
+            "institution": "(01100001) 直销业务部",
+            "premium": 737062.88
+          },
+          {
+            "category": "(03) 机动车辆险",
+            "institution": "(01100011) 泰安市新泰支公司",
+            "premium": 1654114.12
+          },
+          {
+            "category": "(03) 机动车辆险",
+            "institution": "(01100013) 岱岳支公司",
+            "premium": 1606234.54
+          },
+          {
+            "category": "(03) 机动车辆险",
+            "institution": "(01100015) 肥城支公司",
+            "premium": 137703.18
+          },
+          {
+            "category": "(03) 机动车辆险",
+            "institution": "(01100016) 东平支公司",
+            "premium": 156069.02
+          },
+          {
+            "category": "(03) 机动车辆险",
+            "institution": "(01100017) 宁阳支公司",
+            "premium": 22793.86
+          },
+          {
+            "category": "(03) 机动车辆险",
+            "institution": "(01100018) 楼德营销服务部",
+            "premium": 599465.85
+          },
+          {
+            "category": "(03) 机动车辆险",
+            "institution": "(01100019) 泰安续保业务部",
+            "premium": 0.0
+          },
+          {
+            "category": "(04) 责任险",
+            "institution": "(01100001) 直销业务部",
+            "premium": 47066.05
+          },
+          {
+            "category": "(04) 责任险",
+            "institution": "(01100011) 泰安市新泰支公司",
+            "premium": 484549.99
+          },
+          {
+            "category": "(04) 责任险",
+            "institution": "(01100013) 岱岳支公司",
+            "premium": 118742.16
+          },
+          {
+            "category": "(04) 责任险",
+            "institution": "(01100014) 电子商务部",
+            "premium": 0.0
+          },
+          {
+            "category": "(04) 责任险",
+            "institution": "(01100015) 肥城支公司",
+            "premium": 97286.31
+          },
+          {
+            "category": "(04) 责任险",
+            "institution": "(01100016) 东平支公司",
+            "premium": 162513.22
+          },
+          {
+            "category": "(04) 责任险",
+            "institution": "(01100017) 宁阳支公司",
+            "premium": 0.0
+          },
+          {
+            "category": "(04) 责任险",
+            "institution": "(01100018) 楼德营销服务部",
+            "premium": 2358.49
+          },
+          {
+            "category": "(06) 意健险",
+            "institution": "(01100001) 直销业务部",
+            "premium": 57370.07
+          },
+          {
+            "category": "(06) 意健险",
+            "institution": "(01100011) 泰安市新泰支公司",
+            "premium": 93285.5
+          },
+          {
+            "category": "(06) 意健险",
+            "institution": "(01100013) 岱岳支公司",
+            "premium": 53181.61
+          },
+          {
+            "category": "(06) 意健险",
+            "institution": "(01100015) 肥城支公司",
+            "premium": 338001.52
+          },
+          {
+            "category": "(06) 意健险",
+            "institution": "(01100016) 东平支公司",
+            "premium": 9403.88
+          },
+          {
+            "category": "(06) 意健险",
+            "institution": "(01100017) 宁阳支公司",
+            "premium": 8900500.2
+          },
+          {
+            "category": "(06) 意健险",
+            "institution": "(01100018) 楼德营销服务部",
+            "premium": 7837.14
+          },
+          {
+            "category": "(07) 保证险",
+            "institution": "(01100001) 直销业务部",
+            "premium": 0.0
+          },
+          {
+            "category": "(07) 保证险",
+            "institution": "(01100011) 泰安市新泰支公司",
+            "premium": 8046.59
+          },
+          {
+            "category": "(07) 保证险",
+            "institution": "(01100016) 东平支公司",
+            "premium": 0.0
+          },
+          {
+            "category": "(08) 家庭财产险",
+            "institution": "(01100001) 直销业务部",
+            "premium": 75.47
+          },
+          {
+            "category": "(08) 家庭财产险",
+            "institution": "(01100011) 泰安市新泰支公司",
+            "premium": 0.0
+          },
+          {
+            "category": "(08) 家庭财产险",
+            "institution": "(01100013) 岱岳支公司",
+            "premium": 250.94
+          },
+          {
+            "category": "(08) 家庭财产险",
+            "institution": "(01100016) 东平支公司",
+            "premium": 0.0
+          },
+          {
+            "category": "(08) 家庭财产险",
+            "institution": "(01100018) 楼德营销服务部",
+            "premium": 94.34
+          },
+          {
+            "category": "(11) 农业险",
+            "institution": "(01100015) 肥城支公司",
+            "premium": 4089081.6
+          },
+          {
+            "category": "(11) 农业险",
+            "institution": "(01100016) 东平支公司",
+            "premium": 3023936.4
+          },
+          {
+            "category": "(11) 农业险",
+            "institution": "(01100017) 宁阳支公司",
+            "premium": 2825457.07
+          },
+          {
+            "category": "(13) 涉车产品",
+            "institution": "(01100001) 直销业务部",
+            "premium": 32961.6
+          },
+          {
+            "category": "(13) 涉车产品",
+            "institution": "(01100011) 泰安市新泰支公司",
+            "premium": 105480.8
+          },
+          {
+            "category": "(13) 涉车产品",
+            "institution": "(01100013) 岱岳支公司",
+            "premium": 101842.23
+          },
+          {
+            "category": "(13) 涉车产品",
+            "institution": "(01100015) 肥城支公司",
+            "premium": 11224.88
+          },
+          {
+            "category": "(13) 涉车产品",
+            "institution": "(01100016) 东平支公司",
+            "premium": 13972.77
+          },
+          {
+            "category": "(13) 涉车产品",
+            "institution": "(01100017) 宁阳支公司",
+            "premium": 2621.67
+          },
+          {
+            "category": "(13) 涉车产品",
+            "institution": "(01100018) 楼德营销服务部",
+            "premium": 36856.72
+          }
+        ],
+        "total_premium": 26244273.040000003
       }
     },
     "2026": {
@@ -5078,6 +5327,263 @@
           }
         ],
         "total_premium": 23850252.890000004
+      },
+      "2026-03-11": {
+        "date": "2026-03-11",
+        "filename": "2026数据(10).xlsx",
+        "records": [
+          {
+            "category": "(01) 企业财产险",
+            "institution": "(01100001) 直销业务部",
+            "premium": 706830.37
+          },
+          {
+            "category": "(01) 企业财产险",
+            "institution": "(01100011) 泰安市新泰支公司",
+            "premium": 0.0
+          },
+          {
+            "category": "(03) 机动车辆险",
+            "institution": "(01100001) 直销业务部",
+            "premium": 733330.72
+          },
+          {
+            "category": "(03) 机动车辆险",
+            "institution": "(01100003) 直销业务一部",
+            "premium": 0.0
+          },
+          {
+            "category": "(03) 机动车辆险",
+            "institution": "(01100011) 泰安市新泰支公司",
+            "premium": 920229.51
+          },
+          {
+            "category": "(03) 机动车辆险",
+            "institution": "(01100013) 岱岳支公司",
+            "premium": 1184001.07
+          },
+          {
+            "category": "(03) 机动车辆险",
+            "institution": "(01100015) 肥城支公司",
+            "premium": 483859.35
+          },
+          {
+            "category": "(03) 机动车辆险",
+            "institution": "(01100016) 东平支公司",
+            "premium": 158546.8
+          },
+          {
+            "category": "(03) 机动车辆险",
+            "institution": "(01100017) 宁阳支公司",
+            "premium": 231306.15
+          },
+          {
+            "category": "(03) 机动车辆险",
+            "institution": "(01100018) 楼德营销服务部",
+            "premium": 529022.26
+          },
+          {
+            "category": "(03) 机动车辆险",
+            "institution": "(01100019) 泰安续保业务部",
+            "premium": 27204.57
+          },
+          {
+            "category": "(04) 责任险",
+            "institution": "(01100001) 直销业务部",
+            "premium": 12046.43
+          },
+          {
+            "category": "(04) 责任险",
+            "institution": "(01100011) 泰安市新泰支公司",
+            "premium": 384215.17
+          },
+          {
+            "category": "(04) 责任险",
+            "institution": "(01100013) 岱岳支公司",
+            "premium": 43463.43
+          },
+          {
+            "category": "(04) 责任险",
+            "institution": "(01100015) 肥城支公司",
+            "premium": 198490.78
+          },
+          {
+            "category": "(04) 责任险",
+            "institution": "(01100016) 东平支公司",
+            "premium": 119194.1
+          },
+          {
+            "category": "(04) 责任险",
+            "institution": "(01100017) 宁阳支公司",
+            "premium": 111.32
+          },
+          {
+            "category": "(04) 责任险",
+            "institution": "(01100018) 楼德营销服务部",
+            "premium": 196.23
+          },
+          {
+            "category": "(06) 意健险",
+            "institution": "(01100001) 直销业务部",
+            "premium": 40471.22
+          },
+          {
+            "category": "(06) 意健险",
+            "institution": "(01100004) 农业险一部",
+            "premium": 314.5
+          },
+          {
+            "category": "(06) 意健险",
+            "institution": "(01100011) 泰安市新泰支公司",
+            "premium": 26814.7
+          },
+          {
+            "category": "(06) 意健险",
+            "institution": "(01100013) 岱岳支公司",
+            "premium": 93191.98
+          },
+          {
+            "category": "(06) 意健险",
+            "institution": "(01100014) 电子商务部",
+            "premium": 592.71
+          },
+          {
+            "category": "(06) 意健险",
+            "institution": "(01100015) 肥城支公司",
+            "premium": 454536.97
+          },
+          {
+            "category": "(06) 意健险",
+            "institution": "(01100016) 东平支公司",
+            "premium": 34518.04
+          },
+          {
+            "category": "(06) 意健险",
+            "institution": "(01100017) 宁阳支公司",
+            "premium": 6901540.43
+          },
+          {
+            "category": "(06) 意健险",
+            "institution": "(01100018) 楼德营销服务部",
+            "premium": 4885.62
+          },
+          {
+            "category": "(06) 意健险",
+            "institution": "(01100019) 泰安续保业务部",
+            "premium": 235.85
+          },
+          {
+            "category": "(07) 保证险",
+            "institution": "(01100001) 直销业务部",
+            "premium": 188.68
+          },
+          {
+            "category": "(07) 保证险",
+            "institution": "(01100011) 泰安市新泰支公司",
+            "premium": 0.0
+          },
+          {
+            "category": "(08) 家庭财产险",
+            "institution": "(01100001) 直销业务部",
+            "premium": 565.81
+          },
+          {
+            "category": "(08) 家庭财产险",
+            "institution": "(01100004) 农业险一部",
+            "premium": 330.05
+          },
+          {
+            "category": "(08) 家庭财产险",
+            "institution": "(01100011) 泰安市新泰支公司",
+            "premium": 552.62
+          },
+          {
+            "category": "(08) 家庭财产险",
+            "institution": "(01100013) 岱岳支公司",
+            "premium": 719.66
+          },
+          {
+            "category": "(08) 家庭财产险",
+            "institution": "(01100014) 电子商务部",
+            "premium": 344.2
+          },
+          {
+            "category": "(08) 家庭财产险",
+            "institution": "(01100015) 肥城支公司",
+            "premium": 471.55
+          },
+          {
+            "category": "(08) 家庭财产险",
+            "institution": "(01100016) 东平支公司",
+            "premium": 245.23
+          },
+          {
+            "category": "(08) 家庭财产险",
+            "institution": "(01100017) 宁阳支公司",
+            "premium": 462.2
+          },
+          {
+            "category": "(08) 家庭财产险",
+            "institution": "(01100018) 楼德营销服务部",
+            "premium": 221.66
+          },
+          {
+            "category": "(11) 农业险",
+            "institution": "(01100015) 肥城支公司",
+            "premium": 5243570.21
+          },
+          {
+            "category": "(11) 农业险",
+            "institution": "(01100016) 东平支公司",
+            "premium": 2399707.8
+          },
+          {
+            "category": "(11) 农业险",
+            "institution": "(01100017) 宁阳支公司",
+            "premium": 2779516.6
+          },
+          {
+            "category": "(13) 涉车产品",
+            "institution": "(01100001) 直销业务部",
+            "premium": 29122.59
+          },
+          {
+            "category": "(13) 涉车产品",
+            "institution": "(01100011) 泰安市新泰支公司",
+            "premium": 45321.53
+          },
+          {
+            "category": "(13) 涉车产品",
+            "institution": "(01100013) 岱岳支公司",
+            "premium": 75944.9
+          },
+          {
+            "category": "(13) 涉车产品",
+            "institution": "(01100015) 肥城支公司",
+            "premium": 28518.78
+          },
+          {
+            "category": "(13) 涉车产品",
+            "institution": "(01100016) 东平支公司",
+            "premium": 8091.32
+          },
+          {
+            "category": "(13) 涉车产品",
+            "institution": "(01100017) 宁阳支公司",
+            "premium": 14987.17
+          },
+          {
+            "category": "(13) 涉车产品",
+            "institution": "(01100018) 楼德营销服务部",
+            "premium": 34904.87
+          },
+          {
+            "category": "(13) 涉车产品",
+            "institution": "(01100019) 泰安续保业务部",
+            "premium": 1210.69
+          }
+        ],
+        "total_premium": 23954148.400000006
       }
     }
   }
