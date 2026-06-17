@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>保费收入报表</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+    padding:10px;background:#eef1f5;max-width:520px;margin:0 auto
+}
+.header{
+    background:linear-gradient(135deg,#0B82D3,#1a8fe3);
+    color:#fff;border-radius:10px;padding:16px;margin-bottom:10px;text-align:center
+}
+.header h1{font-size:18px;font-weight:700}
+.header p{font-size:12px;opacity:0.85;margin-top:4px}
+.card{
+    background:#fff;border-radius:10px;padding:14px;margin-bottom:10px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06)
+}
+.card h2{
+    font-size:15px;color:#0B82D3;margin-bottom:10px;
+    padding-bottom:8px;border-bottom:2px solid #e8f0f8
+}
+table{width:100%;border-collapse:collapse;font-size:12px}
+thead th{
+    background:#f0f5fb;color:#333;padding:7px 5px;text-align:right;
+    font-weight:600;border-bottom:2px solid #d0dce8;white-space:nowrap
+}
+thead th:first-child{text-align:left;padding-left:8px}
+tbody td{
+    padding:6px 5px;text-align:right;border-bottom:1px solid #f0f0f0;
+    font-variant-numeric:tabular-nums
+}
+tbody td:first-child{text-align:left;font-weight:500;padding-left:8px}
+tbody tr:nth-child(even){background:#fafbfc}
+tr.tot{background:#e8f2fb !important;font-weight:700;border-top:2px solid #0B82D3}
+tr.tot td{padding:8px 5px;font-size:13px}
+tr.hid{display:none}
+.down{color:#d93025}
+.up{color:#188038}
+.zero{color:#999}
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>保费收入报表</h1>
+  <p>2025年1-6月 vs 2026年1-6月 | 2026-06-17</p>
+</div>
+
+<div class="card">
+<h2>险类对比（万元）</h2>
+<table>
+<thead><tr>
+  <th>险类</th><th>2026年1-6月</th><th>2025年1-6月</th><th>同比±</th><th>同比增幅</th><th>环比±</th>
+</tr></thead><tbody>
+<tr><td>财意险</td><td>656.37</td><td>488.06</td><td class="up">+168.30</td><td class="up">34.48%</td><td class="up">+33.66</td></tr>
+<tr><td>农险</td><td>1,646.10</td><td>1,589.89</td><td class="up">+56.21</td><td class="up">3.54%</td><td class="up">+75.68</td></tr>
+<tr><td>车险（含涉车）</td><td>1,062.44</td><td>1,151.77</td><td class="down">-89.33</td><td class="down">-7.76%</td><td class="up">+59.20</td></tr>
+<tr><td>健康险</td><td>706.15</td><td>901.35</td><td class="down">-195.19</td><td class="down">-21.66%</td><td class="up">+52.11</td></tr>
+<tr class="tot"><td>合计</td><td>4,071.06</td><td>4,131.06</td><td class="down">-60.00</td><td class="down">-1.45%</td><td class="up">+220.65</td></tr>
+</tbody></table></div>
+<div class="card">
+<h2>机构对比（万元）</h2>
+<table>
+<thead><tr>
+  <th>机构</th><th>2026年1-6月</th><th>2025年1-6月</th><th>同比±</th><th>同比增幅</th><th>环比±</th>
+</tr></thead><tbody>
+<tr class=""><td>直销业务部</td><td>462.78</td><td>357.91</td><td class="up">+104.88</td><td class="up">29.30%</td><td class="up">+24.49</td></tr>
+<tr class=""><td>肥城支公司</td><td>1,134.05</td><td>996.57</td><td class="up">+137.48</td><td class="up">13.80%</td><td class="up">+65.92</td></tr>
+<tr class=""><td>东平支公司</td><td>458.41</td><td>445.26</td><td class="up">+13.15</td><td class="up">2.95%</td><td class="up">+12.28</td></tr>
+<tr class=""><td>岱岳支公司</td><td>398.94</td><td>410.60</td><td class="down">-11.66</td><td class="down">-2.84%</td><td class="up">+22.71</td></tr>
+<tr class=""><td>宁阳支公司</td><td>1,169.55</td><td>1,285.26</td><td class="down">-115.71</td><td class="down">-9.00%</td><td class="up">+67.84</td></tr>
+<tr class=""><td>楼德营销部</td><td>121.39</td><td>135.34</td><td class="down">-13.95</td><td class="down">-10.31%</td><td class="up">+8.66</td></tr>
+<tr class=""><td>新泰支公司</td><td>322.20</td><td>500.13</td><td class="down">-177.93</td><td class="down">-35.58%</td><td class="up">+18.63</td></tr>
+<tr class="hid"><td>公司业务部</td><td>0.10</td><td>0.00</td><td class="up">+0.10</td><td class="zero">-</td><td class="up">+0.00</td></tr>
+<tr class="hid"><td>农业险一部</td><td>0.09</td><td>0.00</td><td class="up">+0.09</td><td class="zero">-</td><td class="up">+0.00</td></tr>
+<tr class="hid"><td>泰安续保业务部</td><td>3.41</td><td>0.00</td><td class="up">+3.41</td><td class="zero">-</td><td class="up">+0.11</td></tr>
+<tr class="hid"><td>电子商务部</td><td>0.14</td><td>0.00</td><td class="up">+0.14</td><td class="zero">-</td><td class="up">+0.01</td></tr>
+<tr class="hid"><td>直销业务一部</td><td>0.00</td><td>0.00</td><td class="zero">+0.00</td><td class="zero">-</td><td class="zero">+0.00</td></tr>
+<tr class="hid"><td>重点客户部</td><td>0.00</td><td>0.00</td><td class="zero">+0.00</td><td class="zero">-</td><td class="zero">+0.00</td></tr>
+<tr class="tot"><td>合计</td><td>4,071.06</td><td>4,131.06</td><td class="down">-60.00</td><td class="down">-1.45%</td><td class="up">+220.65</td></tr>
+</tbody></table></div>
+<div class="card">
+<h2>机构对比（不含农险，万元）</h2>
+<table>
+<thead><tr>
+  <th>机构</th><th>2026年1-6月</th><th>2025年1-6月</th><th>同比±</th><th>同比增幅</th><th>环比±</th>
+</tr></thead><tbody>
+<tr class=""><td>肥城支公司</td><td>275.70</td><td>130.13</td><td class="up">+145.57</td><td class="up">111.87%</td><td class="down">-792.44</td></tr>
+<tr class=""><td>直销业务部</td><td>462.78</td><td>357.91</td><td class="up">+104.88</td><td class="up">29.30%</td><td class="up">+24.49</td></tr>
+<tr class=""><td>东平支公司</td><td>109.32</td><td>101.97</td><td class="up">+7.35</td><td class="up">7.21%</td><td class="down">-336.81</td></tr>
+<tr class=""><td>岱岳支公司</td><td>398.94</td><td>410.60</td><td class="down">-11.66</td><td class="down">-2.84%</td><td class="up">+22.71</td></tr>
+<tr class=""><td>楼德营销部</td><td>121.39</td><td>135.34</td><td class="down">-13.95</td><td class="down">-10.31%</td><td class="up">+8.66</td></tr>
+<tr class=""><td>宁阳支公司</td><td>730.89</td><td>905.11</td><td class="down">-174.22</td><td class="down">-19.25%</td><td class="down">-370.82</td></tr>
+<tr class=""><td>新泰支公司</td><td>322.20</td><td>500.13</td><td class="down">-177.93</td><td class="down">-35.58%</td><td class="up">+18.63</td></tr>
+<tr class="hid"><td>公司业务部</td><td>0.10</td><td>0.00</td><td class="up">+0.10</td><td class="zero">-</td><td class="up">+0.00</td></tr>
+<tr class="hid"><td>农业险一部</td><td>0.09</td><td>0.00</td><td class="up">+0.09</td><td class="zero">-</td><td class="up">+0.00</td></tr>
+<tr class="hid"><td>泰安续保业务部</td><td>3.41</td><td>0.00</td><td class="up">+3.41</td><td class="zero">-</td><td class="up">+0.11</td></tr>
+<tr class="hid"><td>电子商务部</td><td>0.14</td><td>0.00</td><td class="up">+0.14</td><td class="zero">-</td><td class="up">+0.01</td></tr>
+<tr class="hid"><td>直销业务一部</td><td>0.00</td><td>0.00</td><td class="zero">+0.00</td><td class="zero">-</td><td class="zero">+0.00</td></tr>
+<tr class="hid"><td>重点客户部</td><td>0.00</td><td>0.00</td><td class="zero">+0.00</td><td class="zero">-</td><td class="zero">+0.00</td></tr>
+<tr class="tot"><td>合计</td><td>2,424.96</td><td>2,541.18</td><td class="down">-116.22</td><td class="down">-4.57%</td><td class="down">-1,425.45</td></tr>
+</tbody></table></div>
+</body></html>
