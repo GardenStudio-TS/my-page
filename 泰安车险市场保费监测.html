@@ -234,6 +234,7 @@ function onNeChange() {
 
 function getChartData() {
     var sel = getSelectedUsage('t1');
+    var neVal = getNe();
     var labels = [], shareData = [], yoyData = [];
     for (var fi = 0; fi < CHART_RAW.length; fi++) {
         var file = CHART_RAW[fi];
@@ -241,6 +242,7 @@ function getChartData() {
         var agg = {};
         for (var i = 0; i < file.data.length; i++) {
             var d = file.data[i];
+            if (neVal !== 'all' && d.n !== neVal) continue;
             if (!sel[d.u]) continue;
             if (!agg[d.c]) agg[d.c] = {p:0, tp:0};
             agg[d.c].p += d.p;
@@ -328,6 +330,7 @@ function updateUsageCharts() {
         var marketAgg = {};
         for (var i = 0; i < file.data.length; i++) {
             var d = file.data[i];
+            if (neVal !== 'all' && d.n !== neVal) continue;
             if (!marketAgg[d.u]) marketAgg[d.u] = {p:0};
             marketAgg[d.u].p += d.p;
         }
@@ -337,6 +340,7 @@ function updateUsageCharts() {
         var compAgg = {};
         for (var i = 0; i < file.data.length; i++) {
             var d = file.data[i];
+            if (neVal !== 'all' && d.n !== neVal) continue;
             if (selectedCompany && d.c !== selectedCompany) continue;
             if (!compAgg[d.u]) compAgg[d.u] = {p:0, tp:0};
             compAgg[d.u].p += d.p;

@@ -227,6 +227,7 @@ var USAGE_COLORS = {'家庭自用客车':'#0B82D3','非营业客车':'#188038','
 
 function getChartData() {
     var sel = getSelectedUsage('t1');
+    var neVal = getNe();
     var labels = [], shareData = [], yoyData = [];
     for (var fi = 0; fi < CHART_RAW.length; fi++) {
         var file = CHART_RAW[fi];
@@ -234,6 +235,7 @@ function getChartData() {
         var agg = {}, mktAgg = {};
         for (var i = 0; i < file.comp.length; i++) {
             var d = file.comp[i], md = file.mkt[i];
+            if (neVal !== 'all' && d.n !== neVal) continue;
             if (!sel[d.u]) continue;
             if (!agg[d.c]) agg[d.c] = {p:0, tp:0};
             agg[d.c].p += d.p; agg[d.c].tp += d.tp;
@@ -324,6 +326,7 @@ function updateUsageCharts() {
         var marketAgg = {};
         for (var i = 0; i < file.mkt.length; i++) {
             var md = file.mkt[i];
+            if (neVal !== 'all' && md.n !== neVal) continue;
             if (!marketAgg[md.u]) marketAgg[md.u] = {p:0};
             marketAgg[md.u].p += md.p;
         }
