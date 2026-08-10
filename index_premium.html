@@ -10,6 +10,7 @@ body{
     font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
     padding:10px;background:#eef1f5;max-width:520px;margin:0 auto
 }
+.report-root{background:#fff}
 .header{
     background:linear-gradient(135deg,#0B82D3,#1a8fe3);
     color:#fff;border-radius:10px;padding:16px;margin-bottom:10px;text-align:center
@@ -93,6 +94,7 @@ table.detail-tbl tr.tot td{font-size:16px;padding:10px 5px}
 </style>
 </head>
 <body>
+<div id="reportRoot" class="report-root">
 <div class="header">
   <h1>保费收入报表</h1>
   <p>2025年1-8月 vs 2026年1-8月 | 整月起保口径 | 签单截止日期：2026-08-09</p>
@@ -194,6 +196,7 @@ table.detail-tbl tr.tot td{font-size:16px;padding:10px 5px}
 <tr class="tot"><td>合计</td><td>3.87</td><td>0.01</td><td class="tot-cell">3.88</td><td class="spark-cell"></td></tr>
 </tbody></table></div>
 <div class="detail-legend"><span class="lg-item"><i class="lg-sq" style="background:#0B82D3"></i>历史(2~7日)</span><span class="lg-item"><i class="lg-sq" style="background:#d93025"></i>当日(9日)</span><span class="lg-item"><i class="lg-tri"></i>当日&gt;2.0万</span><span class="lg-item">每格=0.2万</span><span class="lg-item">列顶=日期(日) 列底=当日值(万元)</span></div></div>
+</div><!-- /report-root -->
 
 <div class="dl-bar">
   <button id="dlBtn" type="button">生成报表图片</button>
@@ -239,7 +242,7 @@ table.detail-tbl tr.tot td{font-size:16px;padding:10px 5px}
     btn.disabled=true;var old=btn.textContent;btn.textContent="生成中…";
     var prev=document.getElementById("shotPreview");if(prev)prev.style.display="none";
     if(bar)bar.style.display="none";
-    html2canvas(document.body,{scale:2,backgroundColor:"#ffffff",useCORS:true}).then(function(c){
+    html2canvas(document.getElementById('reportRoot'),{scale:2,backgroundColor:"#ffffff",useCORS:true}).then(function(c){
       var url=c.toDataURL("image/png");
       if(prev)prev.parentNode.removeChild(prev);
       showShot(url);
