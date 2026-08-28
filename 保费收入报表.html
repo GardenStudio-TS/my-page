@@ -6,6 +6,7 @@
 <title>保费收入报表</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
+html,body{overflow-x:hidden}
 body{
     font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
     padding:10px;background:#eef1f5;margin:0 auto
@@ -90,13 +91,7 @@ table.detail-tbl tr.tot td{font-size:16px;padding:10px 5px}
 .dl-bar #dlBtn:disabled,.dl-bar #cpBtn:disabled{background:#bbb;color:#fff;border-color:#bbb;cursor:default}
 .dl-bar #cpBtn:disabled:hover{background:#bbb}
 .dl-tip{display:block;margin-top:8px;font-size:11px;color:#999}
-/* 手机窄屏：表格容器恢复横向滑动（10列在窄屏放不下），宽屏电脑则铺满无滚动 */
-@media (max-width:768px){
-  body{padding:6px}
-  .tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 -2px}
-  .tbl-wrap table{min-width:440px;width:100%}
-}
-</style>
+/* 精简移动端差异：全局统一按桌面端显示（内容宽、居中、无横向滚动） */</style>
 </head>
 <body>
 <div id="reportRoot" class="report-root">
@@ -202,6 +197,33 @@ table.detail-tbl tr.tot td{font-size:16px;padding:10px 5px}
 </tbody></table></div>
 <div class="detail-legend"><span class="lg-item"><i class="lg-sq" style="background:#0B82D3"></i>历史(2~7日)</span><span class="lg-item"><i class="lg-sq" style="background:#d93025"></i>当日(27日)</span><span class="lg-item"><i class="lg-tri"></i>明细 当日&gt;2.0万</span><span class="lg-item"><i class="lg-tri"></i>合计 当日&gt;10万</span><span class="lg-item">每格=0.2万</span><span class="lg-item"><i class="lg-sq" style="background:#188038"></i>合计行 每格=1.0万</span><span class="lg-item">列顶=日期(日) 列底=当日值(万元)</span></div></div>
 </div><!-- /report-root -->
+
+<script>
+(function(){
+  function fitMobile(){
+    var root=document.getElementById('reportRoot');
+    if(!root) return;
+    var baseW=760;              // 电脑端内容基准宽，与CSS max-width一致
+    var vw=document.documentElement.clientWidth;
+    if(vw>=baseW){              // 足够宽：恢复正常，不做缩放
+      root.style.transform='';
+      root.style.transformOrigin='';
+      root.style.width='';
+      root.parentNode.style.height='';
+      return;
+    }
+    var scale=vw/baseW;         // 等比缩小系数
+    root.style.transformOrigin='top center';
+    root.style.transform='scale('+scale+')';
+    root.style.width=baseW+'px';
+    root.style.margin='0 auto';
+    root.parentNode.style.height=(root.offsetHeight*scale)+'px';
+  }
+  window.addEventListener('resize',fitMobile);
+  window.addEventListener('load',fitMobile);
+  fitMobile();
+})();
+</script>
 
 <div class="dl-bar">
   <button id="dlBtn" type="button">生成报表图片</button>
