@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>视频集中-岗位指标报表</title>
+<style>
+:root{--bg:#f4f6f9;--card:#fff;--ink:#1f2329;--muted:#6b7280;--line:#e6e8eb;
+--blue:#2563eb;--blue-soft:#eaf1ff;--red:#d93025;--green:#0f6e56;--amber:#b45309}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif;
+font-size:14px;line-height:1.6;-webkit-text-size-adjust:100%}
+.wrap{max-width:1200px;margin:0 auto;padding:22px 16px 48px}
+.head{background:var(--card);border:1px solid var(--line);border-radius:12px;
+padding:20px 22px;margin-bottom:16px}
+h1{margin:0 0 6px;font-size:21px;font-weight:600;letter-spacing:.3px}
+.sub{color:var(--muted);font-size:13px}
+.tag{display:inline-block;background:var(--blue-soft);color:var(--blue);
+border-radius:5px;padding:2px 9px;font-size:12px;margin-right:8px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.kpi .lb{color:var(--muted);font-size:12px;margin-bottom:6px}
+.kpi .vl{font-size:25px;font-weight:600;line-height:1.2}
+.kpi .un{font-size:12px;color:var(--muted);font-weight:400;margin-left:4px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;
+padding:18px 20px;margin-bottom:16px}
+.card h2{font-size:15px;font-weight:600;margin:0 0 14px;padding-left:10px;
+border-left:3px solid var(--blue)}
+.tbl-wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
+th{background:#f8fafc;color:#374151;font-weight:500;text-align:right;
+position:sticky;top:0}
+th:nth-child(-n+3),td:nth-child(-n+3){text-align:left}
+tbody tr:hover{background:#f9fbff}
+tfoot td{font-weight:600;background:#f8fafc;border-top:2px solid var(--line)}
+.metric-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.metric{border:1px solid var(--line);border-radius:9px;padding:11px 12px;background:#fcfdff}
+.metric .m-lb{color:var(--muted);font-size:12px}
+.metric .m-vl{font-size:19px;font-weight:600;margin-top:3px}
+.bars{display:flex;flex-direction:column;gap:10px}
+.bar-row{display:grid;grid-template-columns:120px 1fr 62px;align-items:center;gap:10px;font-size:13px}
+.bar-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar-track{background:#eef1f6;border-radius:6px;height:14px;overflow:hidden}
+.bar-fill{height:100%;background:var(--blue);border-radius:6px}
+.bar-val{text-align:right;color:var(--muted)}
+.foot{color:var(--muted);font-size:12px;text-align:center;padding:8px 0}
+.note{color:var(--muted);font-size:12px;margin-top:10px}
+@media(max-width:760px){.kpis{grid-template-columns:repeat(2,1fr)}
+.metric-grid{grid-template-columns:repeat(2,1fr)}h1{font-size:18px}
+.bar-row{grid-template-columns:90px 1fr 50px}}
+@media(max-width:420px){.kpis{grid-template-columns:1fr 1fr}.kpi .vl{font-size:20px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="head">
+    <h1>视频集中-岗位指标报表</h1>
+    <div class="sub">
+      <span class="tag">报案时间 2026-11-01 ~ 2026-11-10</span>
+      <span class="tag">当月 1 号至取数当天</span>
+      生成时间 2026-11-10 16:00
+    </div>
+  </div>
+
+  <div class="kpis"><div class="kpi"><div class="lb">统计人数</div><div class="vl">11<span class="un">人</span></div></div><div class="kpi"><div class="lb">视频认领件数</div><div class="vl">835<span class="un">件</span></div></div><div class="kpi"><div class="lb">已决案件数</div><div class="vl">331<span class="un">件</span></div></div><div class="kpi"><div class="lb">已决案件金额</div><div class="vl">51.94<span class="un">万元</span></div></div></div>
+
+  <div class="card">
+    <h2>指标合计</h2>
+    <div class="metric-grid"><div class="metric"><div class="m-lb">视频认领件数</div><div class="m-vl">835</div></div><div class="metric"><div class="m-lb">单查勘案件数</div><div class="m-vl">18</div></div><div class="metric"><div class="m-lb">单定损案件数</div><div class="m-vl">2</div></div><div class="metric"><div class="m-lb">零结处理件数</div><div class="m-vl">79</div></div><div class="metric"><div class="m-lb">整案处理件数</div><div class="m-vl">232</div></div><div class="metric"><div class="m-lb">人工改派案件数</div><div class="m-vl">305</div></div><div class="metric"><div class="m-lb">自动化结案件数</div><div class="m-vl">221</div></div><div class="metric"><div class="m-lb">未决案件数</div><div class="m-vl">199</div></div><div class="metric"><div class="m-lb">已决案件数</div><div class="m-vl">331</div></div><div class="metric"><div class="m-lb">已决案件金额</div><div class="m-vl">519,351.9</div></div></div>
+    <div class="note">已决案件金额单位：元（概览卡片换算为万元）。空白单元格按 0 统计。</div>
+  </div>
+
+  <div class="card">
+    <h2>视频认领件数 Top 5</h2>
+    <div class="bars"><div class="bar-row"><div class="bar-name">泰盛视频赵陆</div><div class="bar-track"><div class="bar-fill" style="width:100.0%"></div></div><div class="bar-val">96</div></div><div class="bar-row"><div class="bar-name">泰山视频杨铭</div><div class="bar-track"><div class="bar-fill" style="width:97.9%"></div></div><div class="bar-val">94</div></div><div class="bar-row"><div class="bar-name">泰盛视频刘江勇</div><div class="bar-track"><div class="bar-fill" style="width:91.7%"></div></div><div class="bar-val">88</div></div><div class="bar-row"><div class="bar-name">泰盛视频刘贵鑫</div><div class="bar-track"><div class="bar-fill" style="width:90.6%"></div></div><div class="bar-val">87</div></div><div class="bar-row"><div class="bar-name">泰盛视频潘正飞</div><div class="bar-track"><div class="bar-fill" style="width:89.6%"></div></div><div class="bar-val">86</div></div></div>
+  </div>
+
+  <div class="card">
+    <h2>逐人明细（11 人）</h2>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>序号</th><th>工号</th><th>姓名</th><th>视频认领件数</th><th>单查勘案件数</th><th>单定损案件数</th><th>零结处理件数</th><th>整案处理件数</th><th>人工改派案件数</th><th>自动化结案件数</th><th>未决案件数</th><th>已决案件数</th><th>已决案件金额</th></tr></thead>
+        <tbody><tr><td>1</td><td>010215</td><td>泰盛视频尤东江</td><td>52</td><td>2</td><td>0</td><td>5</td><td>18</td><td>16</td><td>16</td><td>11</td><td>25</td><td>49,215</td></tr><tr><td>2</td><td>991231</td><td>泰盛视频潘正飞</td><td>86</td><td>1</td><td>0</td><td>3</td><td>28</td><td>27</td><td>26</td><td>27</td><td>32</td><td>51,490</td></tr><tr><td>3</td><td>991315</td><td>泰盛视频赵陆</td><td>96</td><td>5</td><td>0</td><td>15</td><td>17</td><td>36</td><td>17</td><td>23</td><td>37</td><td>35,406</td></tr><tr><td>4</td><td>991316</td><td>泰盛视频田源</td><td>79</td><td>3</td><td>1</td><td>11</td><td>29</td><td>14</td><td>28</td><td>22</td><td>44</td><td>98,893</td></tr><tr><td>5</td><td>991329</td><td>泰盛视频王龙</td><td>55</td><td>0</td><td>0</td><td>3</td><td>16</td><td>25</td><td>15</td><td>11</td><td>19</td><td>20,375</td></tr><tr><td>6</td><td>991330</td><td>泰盛视频刘贵鑫</td><td>87</td><td>1</td><td>0</td><td>10</td><td>20</td><td>38</td><td>20</td><td>18</td><td>31</td><td>34,755</td></tr><tr><td>7</td><td>991331</td><td>泰盛视频湛峰</td><td>38</td><td>0</td><td>0</td><td>1</td><td>5</td><td>22</td><td>5</td><td>10</td><td>6</td><td>9,010</td></tr><tr><td>8</td><td>991344</td><td>泰盛视频刘江勇</td><td>88</td><td>0</td><td>0</td><td>15</td><td>33</td><td>17</td><td>31</td><td>23</td><td>48</td><td>60,285</td></tr><tr><td>9</td><td>991357</td><td>泰盛视频崔浩然</td><td>86</td><td>3</td><td>1</td><td>7</td><td>15</td><td>39</td><td>14</td><td>18</td><td>26</td><td>44,156.5</td></tr><tr><td>10</td><td>991370</td><td>泰盛视频李睿哲</td><td>74</td><td>3</td><td>0</td><td>5</td><td>12</td><td>38</td><td>13</td><td>16</td><td>20</td><td>24,850</td></tr><tr><td>11</td><td>991400</td><td>泰山视频杨铭</td><td>94</td><td>0</td><td>0</td><td>4</td><td>39</td><td>33</td><td>36</td><td>20</td><td>43</td><td>90,916.4</td></tr></tbody>
+        <tfoot><tr><td>合计</td><td>—</td><td>—</td><td>835</td><td>18</td><td>2</td><td>79</td><td>232</td><td>305</td><td>221</td><td>199</td><td>331</td><td>519,351.9</td></tr></tfoot>
+      </table>
+    </div>
+    <div class="note">数据来源：决策报表系统 · 视频查勘目录 · 视频集中-岗位指标报表。</div>
+  </div>
+
+  <div class="foot">本页由取数分析程序生成，数据随每次取数更新。</div>
+</div>
+</body>
+</html>
